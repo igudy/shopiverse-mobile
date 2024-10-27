@@ -24,7 +24,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   scrollView: {
-        backgroundColor: '#F9F9F9',
+    backgroundColor: '#F9F9F9',
   },
   safeArea: {
     flex: 1,
