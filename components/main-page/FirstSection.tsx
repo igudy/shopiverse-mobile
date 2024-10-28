@@ -63,11 +63,10 @@ const starRating = () => {
 
 const { height } = Dimensions.get("window");
 
-
 const FirstSection = () => {
   return (
     <View>
-        <View style={styles.imageContainer}>
+      <View style={styles.imageContainer}>
         <Image
           source={require("@/assets/images/products/hero-image.png")}
           style={styles.heroImage}
@@ -217,11 +216,10 @@ const FirstSection = () => {
         </ScrollView>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default FirstSection
-
+export default FirstSection;
 
 const styles = StyleSheet.create({
   scrollView: {
