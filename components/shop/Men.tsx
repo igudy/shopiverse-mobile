@@ -13,7 +13,7 @@ const Men = () => {
         <Text style={styles.uptoText}>Up to 50% off</Text>
       </View>
 
-      {/* Middle section */}
+      {/* Middle Section */}
       <WomenProps text={"New"} source={require("@/assets/images/products/image11.png")} />
       <WomenProps text={"Clothes"} source={require("@/assets/images/products/image12.png")} />
       <WomenProps text={"Shoes"} source={require("@/assets/images/products/image13.png")} />

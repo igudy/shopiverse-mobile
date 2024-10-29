@@ -3,8 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { ActivityIndicator, View, StyleSheet } from 'react-native'; // Import ActivityIndicator
-
+import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
