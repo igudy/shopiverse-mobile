@@ -1,6 +1,15 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Women from "@/components/shop/Women";
+import Men from "@/components/shop/Men";
+import Kids from "@/components/shop/Kids";
 
 const Shop = () => {
   const [selectedTab, setSelectedTab] = useState("Women");
@@ -15,55 +24,65 @@ const Shop = () => {
       {/* Tabs for Women, Men, and Kids */}
       <View style={styles.tabsContainer}>
         <TouchableOpacity
-          style={[
-            styles.tab,
-            selectedTab === "Women" && styles.activeTab
-          ]}
+          style={[styles.tab, selectedTab === "Women" && styles.activeTab]}
           onPress={() => setSelectedTab("Women")}
         >
-          <Text style={[
-            styles.tabText,
-            selectedTab === "Women" && styles.activeTabText
-          ]}>Women</Text>
+          <Text
+            style={[
+              styles.tabText,
+              selectedTab === "Women" && styles.activeTabText,
+            ]}
+          >
+            Women
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[
-            styles.tab,
-            selectedTab === "Men" && styles.activeTab
-          ]}
+          style={[styles.tab, selectedTab === "Men" && styles.activeTab]}
           onPress={() => setSelectedTab("Men")}
         >
-          <Text style={[
-            styles.tabText,
-            selectedTab === "Men" && styles.activeTabText
-          ]}>Men</Text>
+          <Text
+            style={[
+              styles.tabText,
+              selectedTab === "Men" && styles.activeTabText,
+            ]}
+          >
+            Men
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[
-            styles.tab,
-            selectedTab === "Kids" && styles.activeTab
-          ]}
+          style={[styles.tab, selectedTab === "Kids" && styles.activeTab]}
           onPress={() => setSelectedTab("Kids")}
         >
-          <Text style={[
-            styles.tabText,
-            selectedTab === "Kids" && styles.activeTabText
-          ]}>Kids</Text>
+          <Text
+            style={[
+              styles.tabText,
+              selectedTab === "Kids" && styles.activeTabText,
+            ]}
+          >
+            Kids
+          </Text>
         </TouchableOpacity>
       </View>
-
-            {/* Content based on selected tab */}
-      {selectedTab === "Women" && (
-        <View><Text>Women</Text></View>
-      )}
-      {selectedTab === "Men" && (
-        <View><Text>Men</Text></View>
-      )}
-      {selectedTab === "Kids" && (
-        <View><Text>Kids</Text></View>
-      )}
+      <ScrollView>
+        {/* Content based on selected tab */}
+        {selectedTab === "Women" && (
+          <View>
+            <Women />
+          </View>
+        )}
+        {selectedTab === "Men" && (
+          <View>
+            <Men/>
+          </View>
+        )}
+        {selectedTab === "Kids" && (
+          <View>
+            <Kids />
+          </View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -73,12 +92,12 @@ export default Shop;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F9F9F9",
+    backgroundColor: "#F1F1F1",
     paddingHorizontal: 16,
     paddingVertical: 20,
   },
   shadow: {
-    shadowColor: 'gray',
+    shadowColor: "gray",
   },
   shopText: {
     color: "black",
@@ -93,7 +112,7 @@ const styles = StyleSheet.create({
   },
   tab: {
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 40,
     borderRadius: 20,
     backgroundColor: "#E0E0E0",
   },
