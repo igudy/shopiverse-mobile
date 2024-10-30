@@ -1,82 +1,109 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView, ScrollView } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+// import { SafeAreaView } from "react-native-safe-area-context";
+// import { ScrollView } from "react-native-gesture-handler";
 
-const Bag = () => {
-  const [quantity, setQuantity] = useState(1);
-
-  const decreaseQuantity = () => {
-    setQuantity(prev => (prev > 1 ? prev - 1 : 1));
-  };
-
-  const increaseQuantity = () => {
-    setQuantity(prev => prev + 1);
-  };
-
+const BagItem = ({
+  key,
+  quantity,
+  increaseQuantity,
+  decreaseQuantity,
+}: any) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.shopText}>My Bag</Text>
-      </View>
+    <>
+      <View
+        className="flex-row my-4 h-[110px] bg-white rounded-lg"
+        key={key}
+      >
+        <View className="w-[30%]">
+          <Image
+            source={require("@/assets/images/products/image11.png")}
+            style={{
+              borderRadius: 10,
+              width: "100%",
+              height: "100%",
+              resizeMode: "cover",
+            }}
+          />
+        </View>
 
-      {/* <View>
-        <View style={styles.middleSection}>
-          <View style={styles.row}>
+        <View className="w-[70%] px-4">
+          <View className="flex-row justify-between items-center">
+            <View>
+              <View>
+                <Text className="text-3xl mt-1" style={styles.fontBold}>
+                  Pullover
+                </Text>
+              </View>
 
-            <View style={styles.viewImage}>
-              <Image
-                source={require("@/assets/images/products/image11.png")}
-                style={styles.heroImage}
-              />
-            </View>
-
-            <View style={styles.viewText}>
-              <View style={styles.spacingBetween} className="flex-1">
-                <View>
-                  <Text className="text-3xl font-bold text-black">
-                    Pull Over
-                  </Text>
-                  <View style={styles.colorAndSize}>
-                    <Text style={styles.colorBlack}>Color:</Text>
-                    <Text style={styles.black}>Black</Text>
-                    <Text style={styles.colorBlack}>Size:</Text>
-                    <Text style={styles.black}>L</Text>
-                  </View>
-
-                  <View style={styles.quantityControls}>
-                    <TouchableOpacity
-                      onPress={decreaseQuantity}
-                      style={styles.controlButton}
-                    >
-                      <Text style={styles.controlText}>-</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.quantityText}>{quantity}</Text>
-                    <TouchableOpacity
-                      onPress={increaseQuantity}
-                      style={styles.controlButton}
-                    >
-                      <Text style={styles.controlText}>+</Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-
-                <TouchableOpacity>
-                  <Ionicons name="menu" size={30 }  color="gray" />
-                </TouchableOpacity>
+              <View className="flex-row mt-2 gap-2">
+                <Text className="text-gray-400">
+                  Color: <Text className="font-bold text-black">Black</Text>
+                </Text>
+                <Text className="text-gray-400">
+                  Size: <Text className="font-bold text-black">L</Text>
+                </Text>
               </View>
             </View>
 
+            <View>
+              <TouchableOpacity>
+                <Ionicons name="menu" size={30} color="gray" />
+              </TouchableOpacity>
+            </View>
+          </View>
 
+          <View className="flex-row justify-between w-[60%] items-center mt-4">
+            <View>
+              <TouchableOpacity
+                onPress={decreaseQuantity}
+                style={styles.controlButton}
+              >
+                <Text style={styles.controlText}>-</Text>
+              </TouchableOpacity>
+            </View>
+            <View>
+              <Text style={styles.quantityText}>{quantity}</Text>
+            </View>
+            <View>
+              <TouchableOpacity
+                onPress={increaseQuantity}
+                style={styles.controlButton}
+              >
+                <Text style={styles.controlText}>+</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View> */}
+      </View>
+    </>
+  );
+};
+const Bag = () => {
+  const [quantity, setQuantity] = useState(1);
+  const decreaseQuantity = () =>
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View style={styles.header}>
+          <Text style={styles.shopText} className="mx-4 mt-6">My Bag</Text>
+        </View>
+
+        <View className="mx-4">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <BagItem
+              key={index}
+              quantity={quantity}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -111,7 +138,7 @@ const styles = StyleSheet.create({
     width: "70%",
     paddingHorizontal: 8,
     flexDirection: "column",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   viewImage: {
     width: "30%",
@@ -168,5 +195,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginHorizontal: 5,
+  },
+  fontBold: {
+    fontFamily: "Metropolis-Bold",
   },
 });
