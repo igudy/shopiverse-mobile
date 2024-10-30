@@ -26,11 +26,9 @@ const Bag = () => {
         <Text style={styles.shopText}>My Bag</Text>
       </View>
 
-      <View>
+      {/* <View>
         <View style={styles.middleSection}>
           <View style={styles.row}>
-
-
 
             <View style={styles.viewImage}>
               <Image
@@ -39,11 +37,12 @@ const Bag = () => {
               />
             </View>
 
-
             <View style={styles.viewText}>
-              <View style={styles.spacingBetween}>
+              <View style={styles.spacingBetween} className="flex-1">
                 <View>
-                  <Text style={styles.newText}>Pull Over</Text>
+                  <Text className="text-3xl font-bold text-black">
+                    Pull Over
+                  </Text>
                   <View style={styles.colorAndSize}>
                     <Text style={styles.colorBlack}>Color:</Text>
                     <Text style={styles.black}>Black</Text>
@@ -51,7 +50,6 @@ const Bag = () => {
                     <Text style={styles.black}>L</Text>
                   </View>
 
-                  {/* Quantity Controls directly below color and size */}
                   <View style={styles.quantityControls}>
                     <TouchableOpacity
                       onPress={decreaseQuantity}
@@ -70,7 +68,7 @@ const Bag = () => {
                 </View>
 
                 <TouchableOpacity>
-                  <Ionicons name="menu" size={20} color="gray" />
+                  <Ionicons name="menu" size={30 }  color="gray" />
                 </TouchableOpacity>
               </View>
             </View>
@@ -78,7 +76,7 @@ const Bag = () => {
 
           </View>
         </View>
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 };
@@ -123,10 +121,6 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: "cover",
     borderRadius: 10,
-  },
-  newText: {
-    fontSize: 26,
-    fontFamily: "Metropolis-Bold",
   },
   colorAndSize: {
     flexDirection: "row",
