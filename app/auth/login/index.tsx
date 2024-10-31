@@ -17,11 +17,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
+    backgroundColor: "#FFFFFF", // Add a white background for visibility
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    color: "black", // Ensure text color is set
   },
   input: {
     borderWidth: 1,

@@ -83,11 +83,10 @@ const FirstSection = () => {
       <View className="flex-row gap-3" style={styles.authHeader}>
         <Link href={"/login"} style={styles.signIn}>
             <Text>Login</Text>
-          
         </Link>
 
         <Link href={'/register'} style={styles.signUp}>
-            <Text >Register</Text>
+            <Text>Register</Text>
         </Link>
       </View>
 
