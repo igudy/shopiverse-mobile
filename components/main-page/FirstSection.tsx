@@ -7,11 +7,14 @@ import {
   Dimensions,
   ScrollView,
   Pressable,
+  TouchableOpacity
 } from "react-native";
 import StarRating from "react-native-star-rating-widget";
 import _ from "lodash";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+// import { TouchableOpacity } from "react-native-gesture-handler";
+
 
 const images = [
   {
@@ -76,15 +79,16 @@ const FirstSection = () => {
         />
       </View>
 
-      
       {/* Sign in and sign up */}
       <View className="flex-row gap-3" style={styles.authHeader}>
-        <View>
-          <Text style={styles.signIn}>Login</Text>
-        </View>
-        <View>
-          <Text style={styles.signUp}>Register</Text>
-        </View>
+        <Link href={"/login"} style={styles.signIn}>
+            <Text>Login</Text>
+          
+        </Link>
+
+        <Link href={'/register'} style={styles.signUp}>
+            <Text >Register</Text>
+        </Link>
       </View>
 
       <View style={styles.content}>
@@ -262,7 +266,7 @@ const styles = StyleSheet.create({
     fontFamily: "Metropolis-Bold",
     borderRadius: 20,
     padding: 10,
-    backgroundColor: "black"
+    backgroundColor: "black",
   },
   signUp: {
     color: "white",
@@ -271,8 +275,7 @@ const styles = StyleSheet.create({
     fontFamily: "Metropolis-Bold",
     borderRadius: 20,
     padding: 10,
-    backgroundColor: "black"
-
+    backgroundColor: "black",
   },
   imageContainer: {
     height: height * 0.5,
@@ -297,16 +300,16 @@ const styles = StyleSheet.create({
     // bottom: 0,
     right: 10,
     backgroundColor: "white",
-    borderRadius: 30
+    borderRadius: 30,
   },
   fashionText: {
     color: "white",
-    fontSize: 70,
+    fontSize: 60,
     fontFamily: "Metropolis-Bold",
   },
   salesText: {
     color: "white",
-    fontSize: 70,
+    fontSize: 60,
     fontFamily: "Metropolis-Bold",
   },
   checkBg: {
