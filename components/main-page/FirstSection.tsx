@@ -76,6 +76,17 @@ const FirstSection = () => {
         />
       </View>
 
+      
+      {/* Sign in and sign up */}
+      <View className="flex-row gap-3" style={styles.authHeader}>
+        <View>
+          <Text style={styles.signIn}>Login</Text>
+        </View>
+        <View>
+          <Text style={styles.signUp}>Register</Text>
+        </View>
+      </View>
+
       <View style={styles.content}>
         <Text style={styles.fashionText}>Fashion</Text>
         <Text style={styles.salesText}>Sales</Text>
@@ -244,6 +255,25 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#F9F9F9",
   },
+  signIn: {
+    color: "white",
+    width: 100,
+    textAlign: "center",
+    fontFamily: "Metropolis-Bold",
+    borderRadius: 20,
+    padding: 10,
+    backgroundColor: "black"
+  },
+  signUp: {
+    color: "white",
+    textAlign: "center",
+    width: 100,
+    fontFamily: "Metropolis-Bold",
+    borderRadius: 20,
+    padding: 10,
+    backgroundColor: "black"
+
+  },
   imageContainer: {
     height: height * 0.5,
     width: "100%",
@@ -257,6 +287,17 @@ const styles = StyleSheet.create({
     padding: 16,
     position: "absolute",
     bottom: "75%",
+  },
+  authHeader: {
+    gap: 10,
+    padding: 16,
+    position: "absolute",
+    top: 30,
+    // left: 0,
+    // bottom: 0,
+    right: 10,
+    backgroundColor: "white",
+    borderRadius: 30
   },
   fashionText: {
     color: "white",

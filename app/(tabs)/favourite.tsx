@@ -143,7 +143,9 @@ const FavItem = ({
                 <Text className="font-bold text-black">{item.color}</Text>
               </Text>
               <Text className="text-gray-400">
-                Size: <Text className="font-bold text-black">{item.size}</Text>
+                Size: <Text className="font-bold text-black">
+                  {item.size}
+                </Text>
               </Text>
             </View>
           </View>
@@ -153,8 +155,10 @@ const FavItem = ({
           </TouchableOpacity>
         </View>
 
-        <View className="flex-row justify-between items-center mt-4">
-          <View className="flex-row justify-between items-center">
+        <View className="flex-row justify-between 
+        items-center mt-4">
+          <View className="flex-row justify-between 
+          items-center">
             <Text className="font-bold text-3xl">{item.amount}</Text>
           </View>
 
@@ -181,6 +185,8 @@ const FavItem = ({
             }}
           />
           </View>
+
+          
 
         </View>
       </View>
