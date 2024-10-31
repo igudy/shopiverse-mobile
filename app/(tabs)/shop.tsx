@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     marginBottom: 20,
+        fontFamily: "Metropolis-Bold"
   },
   tabsContainer: {
     flexDirection: "row",

@@ -199,6 +199,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 32,
     fontWeight: "bold",
+        fontFamily: "Metropolis-Bold"
   },
   controlButton: {
     borderWidth: 1,

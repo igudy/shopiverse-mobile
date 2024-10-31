@@ -278,6 +278,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 32,
     fontWeight: "bold",
+        fontFamily: "Metropolis-Bold"
   },
   horizontalScrollContent: {
     paddingHorizontal: 16,
