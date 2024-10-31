@@ -4,7 +4,7 @@ import React from 'react'
 const _layout = () => {
   return (
     <View>
-      <Text>Testing switch</Text>
+      <Text>Testing</Text>
     </View>
   )
 }
