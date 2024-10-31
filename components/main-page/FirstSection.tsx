@@ -103,8 +103,23 @@ const FirstSection = () => {
         >
           {images.map((image) => (
             <View key={image.id} style={styles.imageCard}>
-              <Link href={`./product-details/${image.id}`}>
-                {/* <Link href={{ pathname: '/product-details/[id]', params: { id: image.id.toString() } }}> */}
+              {/* <Link href={`./product-details/${image.id}`}> */}
+              {/* <Link href={{ pathname: '/product-details/[id]', 
+              params: { id: image.id.toString() } }}> */}
+              <Link
+                href={{
+                  pathname: "./product-details/[id]",
+                  params: {
+                    id: image.id.toString(),
+                    name: image.name,
+                    description: image.description,
+                    rating: image.rating,
+                    discountPrice: image.price.discount,
+                    originalPrice: image.price.original,
+                    source: image.source,
+                  },
+                }}
+              >
                 <View>
                   <Image source={image.source} style={styles.image} />
                   <View style={styles.starSpace}>

@@ -38,7 +38,7 @@ export default function RootLayout() {
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
     );
-  }
+  } 
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
