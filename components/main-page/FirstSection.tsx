@@ -6,9 +6,12 @@ import {
   Text,
   Dimensions,
   ScrollView,
+  Pressable,
 } from "react-native";
 import StarRating from "react-native-star-rating-widget";
 import _ from "lodash";
+import { Link, router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const images = [
   {
@@ -100,31 +103,32 @@ const FirstSection = () => {
         >
           {images.map((image) => (
             <View key={image.id} style={styles.imageCard}>
-              <Image source={image.source} style={styles.image} />
-              <View style={styles.starSpace}>
-                <StarRating
-                  onChange={starRating}
-                  rating={image.rating}
-                  style={styles.starRating}
-                  starSize={20}
-                  color="#FFD700"
-                />
-                <Text>(5)</Text>
-              </View>
-
-              <Text style={styles.imageName}>{image.name}</Text>
-              {/* <Text style={styles.description}>
-                {_.truncate(image.description, { length: 50 })}
-              </Text> */}
-              <Text style={styles.price}>
-                <Text style={styles.discountedPrice}>
-                  ${image.price.discount}
-                </Text>
-                <Text style={styles.originalPrice}>
-                  {" "}
-                  ${image.price.original}
-                </Text>
-              </Text>
+              <Link href={`./product-details/${image.id}`}>
+                {/* <Link href={{ pathname: '/product-details/[id]', params: { id: image.id.toString() } }}> */}
+                <View>
+                  <Image source={image.source} style={styles.image} />
+                  <View style={styles.starSpace}>
+                    <StarRating
+                      onChange={starRating}
+                      rating={image.rating}
+                      style={styles.starRating}
+                      starSize={20}
+                      color="#FFD700"
+                    />
+                    <Text>(5)</Text>
+                  </View>
+                  <Text style={styles.imageName}>{image.name}</Text>
+                  <Text style={styles.price}>
+                    <Text style={styles.discountedPrice}>
+                      ${image.price.discount}
+                    </Text>
+                    <Text style={styles.originalPrice}>
+                      {" "}
+                      ${image.price.original}
+                    </Text>
+                  </Text>
+                </View>
+              </Link>
             </View>
           ))}
         </ScrollView>
@@ -237,7 +241,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 16,
     position: "absolute",
-    top: 250,
+    bottom: "75%",
   },
   fashionText: {
     color: "white",
