@@ -7,7 +7,7 @@ const Login = () => {
       <Text style={styles.title}>Login</Text>
       <TextInput placeholder="Email" style={styles.input} />
       <TextInput placeholder="Password" style={styles.input} secureTextEntry />
-      <Button title="Login" onPress={() => console.log("Login pressed")} />
+      <Button title="Login" onPress={() => console.log("Logggin pressed")} />
     </View>
   );
 };
@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
-    backgroundColor: "#FFFFFF", // Add a white background for visibility
+    backgroundColor: "#FFFFFF",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "black", // Ensure text color is set
+    color: "black",
   },
   input: {
     borderWidth: 1,
