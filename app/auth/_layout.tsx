@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View } from 'react-native';
+import React from 'react';
+import { Slot } from 'expo-router';
 
-const _layout = () => {
+const Layout = () => {
   return (
-    <View>
-      
+    <View style={{ flex: 1 }}>
+      <Slot />
     </View>
-  )
-}
+  );
+};
 
-export default _layout
+export default Layout;

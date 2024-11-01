@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import StarRating from "react-native-star-rating-widget";
 import _ from "lodash";
-import { Link, router } from "expo-router";
+import { Href, Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -81,11 +81,11 @@ const FirstSection = () => {
 
       {/* Sign in and sign up */}
       <View className="flex-row gap-3" style={styles.authHeader}>
-        <Link href={"/login"} style={styles.signIn}>
+        <Link href={"/auth/login" as Href} style={styles.signIn}>
             <Text>Login</Text>
         </Link>
 
-        <Link href={'/register'} style={styles.signUp}>
+        <Link href={'/auth/register' as Href} style={styles.signUp}>
             <Text>Register</Text>
         </Link>
       </View>
