@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   },
   heartIcon: {
     color: "gray",
-    // padding: 6,
     width: 50,
     height: 50,
     backgroundColor: "white",
